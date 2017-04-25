@@ -11,7 +11,7 @@ uses
   Spring.TestRunner in '..\..\Tests\Source\Spring.TestRunner.pas',
   {$IFDEF DELPHIXE5_UP}
   FireDAC.VCLUI.Wait,
-  {$ENDIF}
+  {$ENDIF }
   TestCodeGenerator in 'TestCodeGenerator.pas',
   Spring.Persistence.Adapters.ADO in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.ADO.pas',
   Spring.Persistence.Adapters.ASA in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.ASA.pas',
@@ -19,18 +19,17 @@ uses
   Spring.Persistence.Adapters.FieldCache in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.FieldCache.pas',
   {$IFDEF DELPHIXE5_UP}
   Spring.Persistence.Adapters.FireDAC in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.FireDAC.pas',
-  {$ENDIF}
+  {$ENDIF }
   Spring.Persistence.Adapters.MongoDB in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.MongoDB.pas',
   Spring.Persistence.Adapters.MSSQL in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.MSSQL.pas',
-  Spring.Persistence.Adapters.Oracle in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.Oracle.pas',
+  Spring.Persistence.Adapters.Oracle.ODAC in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.Oracle.ODAC.pas',
   Spring.Persistence.Adapters.SQLite in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.SQLite.pas',
   {$IFDEF ENABLE_UIB}
   Spring.Persistence.Adapters.UIB in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.UIB.pas',
-  TestAdaptersUIB in 'TestAdaptersUIB.pas',
-  {$ENDIF}
+  {$ENDIF }
   {$IFDEF ENABLE_ZEOS}
   Spring.Persistence.Adapters.Zeos in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.Zeos.pas',
-  {$ENDIF}
+  {$ENDIF }
   Spring.Persistence.Core.AbstractSession in '..\..\Source\Persistence\Core\Spring.Persistence.Core.AbstractSession.pas',
   Spring.Persistence.Core.Base in '..\..\Source\Persistence\Core\Spring.Persistence.Core.Base.pas',
   Spring.Persistence.Core.ConnectionFactory in '..\..\Source\Persistence\Core\Spring.Persistence.Core.ConnectionFactory.pas',
@@ -119,8 +118,7 @@ uses
   TestDatabaseManager in 'TestDatabaseManager.pas',
   {$IFDEF DELPHIXE5_UP}
   TestAdaptersFireDAC in 'TestAdaptersFireDAC.pas',
-  TestFireDACConnection in 'TestFireDACConnection.pas',
-  {$ENDIF}
+  {$ENDIF }
   TestObjectDataSet in 'TestObjectDataSet.pas',
   TestPersistence in 'TestPersistence.pas',
   TestSession in 'TestSession.pas',
@@ -134,7 +132,8 @@ uses
   TestMockADOConnection in 'TestMockADOConnection.pas',
   TestAdaptersMSSQL in 'TestAdaptersMSSQL.pas',
   TestAdaptersDBX in 'TestAdaptersDBX.pas',
-  TestSQLConnection in 'TestSQLConnection.pas';
+  TestSQLConnection in 'TestSQLConnection.pas',
+  Spring.Persistence.Adapters.Oracle in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.Oracle.pas';
 
 begin
   OutputDir := IncludeTrailingPathDelimiter(ExtractFileDir(ParamStr(0)));
