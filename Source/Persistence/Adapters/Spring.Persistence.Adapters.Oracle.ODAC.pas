@@ -39,11 +39,19 @@ uses
 
 type
   EODACAdapterException = class(EORMAdapterException);
+(*
   /// <summary>
   ///   Represents Oracle resultset.
   /// </summary>
-  TODACResultsetAdapter = class(TDriverAdapterBase, IDBResultSet);
-
+  TODACResultsetAdapter = class(TDriverAdapterBase, IDBResultSet)
+    function IsEmpty: Boolean;
+    function Next: Boolean;
+    function FieldExists(const fieldName: string): Boolean;
+    function GetFieldValue(index: Integer): Variant; overload;
+    function GetFieldValue(const fieldname: string): Variant; overload;
+    function GetFieldCount: Integer;
+    function GetFieldName(index: Integer): string;
+  end;
   /// <summary>
   ///   Represents Oracle statement.
   /// </summary>
@@ -75,18 +83,16 @@ type
     procedure Commit; override;
     procedure Rollback; override;
   end;
-
+*)
 implementation
 
 uses
-  {$IFDEF MSWINDOWS}
-  ADODB,
-  {$ENDIF}
+
   Spring.Persistence.Core.ConnectionFactory,
   Spring.Persistence.Core.ResourceStrings,
   Spring.Persistence.SQL.Generators.Oracle,
   Spring.Persistence.SQL.Interfaces;
-
+(*
 
 {$REGION 'TODACConnectionAdapter'}
 
@@ -115,12 +121,12 @@ end;
 
 function TODACConnectionAdapter.CreateStatement: IDBStatement;
 var
-  statement: TADOQuery;
+  statement: TOraSQL;
   adapter: TODACStatementAdapter;
 begin
   if Assigned(Connection) then
   begin
-    statement := TADOQuery.Create(nil);
+    statement := TOraSQL.Create(nil);
     statement.Connection := Connection;
 
     adapter := TODACStatementAdapter.Create(statement, ExceptionHandler);
@@ -222,7 +228,44 @@ begin
   Statement.Text := commandText;
 end;
 
+{ TODACResultsetAdapter }
+
+function TODACResultsetAdapter.FieldExists(const fieldName: string): Boolean;
+begin
+
+end;
+
+function TODACResultsetAdapter.GetFieldCount: Integer;
+begin
+
+end;
+
+function TODACResultsetAdapter.GetFieldName(index: Integer): string;
+begin
+
+end;
+
+function TODACResultsetAdapter.GetFieldValue(index: Integer): Variant;
+begin
+
+end;
+
+function TODACResultsetAdapter.GetFieldValue(const fieldname: string): Variant;
+begin
+
+end;
+
+function TODACResultsetAdapter.IsEmpty: Boolean;
+begin
+
+end;
+
+function TODACResultsetAdapter.Next: Boolean;
+begin
+
+end;
+
 initialization
   TConnectionFactory.RegisterConnection<TODACConnectionAdapter>(dTODAC);
-
+*)
 end.

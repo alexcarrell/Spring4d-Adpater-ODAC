@@ -133,7 +133,11 @@ uses
   TestAdaptersMSSQL in 'TestAdaptersMSSQL.pas',
   TestAdaptersDBX in 'TestAdaptersDBX.pas',
   TestSQLConnection in 'TestSQLConnection.pas',
-  Spring.Persistence.Adapters.Oracle in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.Oracle.pas';
+  Spring.Persistence.Adapters.Oracle in '..\..\Source\Persistence\Adapters\Spring.Persistence.Adapters.Oracle.pas',
+  TestAdaptersDevArtODAC in 'TestAdaptersDevArtODAC.pas',
+  TestDevartODACConnection in 'TestDevartODACConnection.pas',
+  DBAccess in 'C:\Users\Public\Documents\RAD Studio\Seattle\Components\ODAC\odac97src\ODAC\Source\DBAccess.pas',
+  Ora in 'C:\Users\Public\Documents\RAD Studio\Seattle\Components\ODAC\odac97src\ODAC\Source\Ora.pas';
 
 begin
   OutputDir := IncludeTrailingPathDelimiter(ExtractFileDir(ParamStr(0)));

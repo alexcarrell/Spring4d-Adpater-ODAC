@@ -30,13 +30,12 @@ package Spring.Base;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-{$I Spring.inc}
-
 requires
-{$IFDEF FMX}
-  fmx,
-{$ENDIF}
-  rtl;
+  rtl,
+  vclimg,
+  vcl,
+  dbrtl,
+  adortl;
 
 contains
   Spring in '..\..\Source\Base\Spring.pas',
